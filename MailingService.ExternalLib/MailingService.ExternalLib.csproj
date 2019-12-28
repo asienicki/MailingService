@@ -5,15 +5,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Users\dev\source\repos\MailingService\MailingService.RestApi\bin\Debug\netcoreapp3.1\Plugins</OutputPath>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="EmailTemplates\Hello.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="EmailTemplates\Hello.cshtml" />
+    <Compile Remove="EmailTemplates\**" />
+    <EmbeddedResource Remove="EmailTemplates\**" />
+    <None Remove="EmailTemplates\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,8 +33,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="EmailTemplates.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmailTemplates.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
