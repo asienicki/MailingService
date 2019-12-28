@@ -1,7 +1,9 @@
-﻿namespace MailingService.ClientExpectations
+﻿using System.Threading.Tasks;
+
+namespace MailingService.ClientExpectations
 {
     public interface IEmailMessageBuilder
     {
-        EmailMessage PrepareEmailMessage(string base64Json);
+        Task<EmailMessage> PrepareEmailMessage(string base64Json);
     }
 }

@@ -9,7 +9,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EmailTemplates\Hello.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmailTemplates\Hello.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jil" Version="3.0.0-alpha2" />
+    <PackageReference Include="RazorLight" Version="2.0.0-beta4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MailingService.ClientExpectations\MailingService.ClientExpectations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="EmailTemplates.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EmailTemplates.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="EmailTemplates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailTemplates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 using MailingService.Domains;
+using MailingService.Domains.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +27,10 @@ namespace MailingService.RestApi
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IMefHelper, MefHelper>();
 
+            IMvcBuilder builder = services.AddRazorPages();
+            
+            builder.AddRazorRuntimeCompilation();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

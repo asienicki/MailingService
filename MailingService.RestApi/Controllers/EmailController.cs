@@ -1,4 +1,5 @@
-﻿using MailingService.Domains;
+﻿using System.Threading.Tasks;
+using MailingService.Domains;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,14 +24,20 @@ namespace MailingService.RestApi.Controllers
         /// </summary>
         /// <param name="templateName"></param>
         /// <param name="base64Json"></param>
-        public void Get(string templateName = "MailingService.ExternalLib.dll", string base64Json = null)
+        public async Task<IActionResult> Get(string templateName, string base64Json)
         {
+            if (string.IsNullOrWhiteSpace(templateName) || string.IsNullOrWhiteSpace(base64Json))
+            {
+                return BadRequest();
+            }
+
             var clientAssembly = _mefHelper.GetEmailMessageBuilderByName(templateName);
 
-            var emailMessage = clientAssembly.PrepareEmailMessage(base64Json);
+            var emailMessage = await clientAssembly.PrepareEmailMessage(base64Json);
 
             //TODO: HangFire
-            _emailService.Send(emailMessage);
+            //_emailService.Send(emailMessage);
+            return Ok(emailMessage.Content);
         }
     }
 }
