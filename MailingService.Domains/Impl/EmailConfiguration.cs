@@ -1,4 +1,4 @@
-﻿namespace MailingService.Domains
+﻿namespace MailingService.Domains.Impl
 {
     public class EmailConfiguration : IEmailConfiguration
     {

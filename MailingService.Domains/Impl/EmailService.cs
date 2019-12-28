@@ -4,7 +4,7 @@ using MailKit.Net.Smtp;
 using MimeKit;
 using MimeKit.Text;
 
-namespace MailingService.Domains
+namespace MailingService.Domains.Impl
 {
     public class EmailService : IEmailService
     {

@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.RestApi", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.ClientExpectations", "MailingService.ClientExpectations\MailingService.ClientExpectations.csproj", "{22654593-E61C-4CE3-8829-B50470453846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailingService.Domains", "MailingService.Domains\MailingService.Domains.csproj", "{F541CC97-3274-408F-8430-0F36DAE7B21B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.Domains", "MailingService.Domains\MailingService.Domains.csproj", "{F541CC97-3274-408F-8430-0F36DAE7B21B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailingService.ExternalLib", "MailingService.ExternalLib\MailingService.ExternalLib.csproj", "{4E36248E-D566-4F40-A6CC-9F4122C38254}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.ExternalLib", "MailingService.ExternalLib\MailingService.ExternalLib.csproj", "{4E36248E-D566-4F40-A6CC-9F4122C38254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailingService.RestApi.Client", "MailingService.RestApi.Client\MailingService.RestApi.Client.csproj", "{A0C1E811-5745-4EF5-93D8-56040153D57C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4E36248E-D566-4F40-A6CC-9F4122C38254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E36248E-D566-4F40-A6CC-9F4122C38254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E36248E-D566-4F40-A6CC-9F4122C38254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0C1E811-5745-4EF5-93D8-56040153D57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0C1E811-5745-4EF5-93D8-56040153D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0C1E811-5745-4EF5-93D8-56040153D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0C1E811-5745-4EF5-93D8-56040153D57C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
