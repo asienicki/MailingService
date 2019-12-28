@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="EmailTemplates\Hello.cshtml" />
+    <Resource Include="EmailTemplates\Hello.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +39,7 @@
     <EmbeddedResource Update="EmailTemplates.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EmailTemplates.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
