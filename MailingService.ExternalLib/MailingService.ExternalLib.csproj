@@ -9,13 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="EmailTemplates\Hello.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="EmailTemplates\Hello.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Compile Remove="EmailTemplates\**" />
+    <EmbeddedResource Remove="EmailTemplates\**" />
+    <None Remove="EmailTemplates\**" />
   </ItemGroup>
 
   <ItemGroup>
