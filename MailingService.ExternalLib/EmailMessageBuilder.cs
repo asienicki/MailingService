@@ -7,7 +7,7 @@ namespace MailingService.ExternalLib
     /// Class from some external System
     /// </summary>
     [Export(typeof(IEmailMessageBuilder))]
-    public class EmailEmailMessageBuilder : IEmailMessageBuilder
+    public class EmailMessageBuilder : IEmailMessageBuilder
     {
         public EmailMessage PrepareEmailMessage(string base64Json)
         {
