@@ -25,16 +25,13 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 
 - task: VSTest@2
-  displayName: 'Run Unit Tests'
   inputs:
+    testSelector: 'testAssemblies'
     testAssemblyVer2: |
-     **\$(BuildConfiguration)\*UnitTests.dll
-     !**\*Microsoft.VisualStudio.TestPlatform*
-     !**\obj\**
-    codeCoverageEnabled: True
-    otherConsoleOptions: '/platform:x64 /Framework:.NETCoreApp,Version=v3.1 /logger:console;verbosity="normal" '
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+      **\*Test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
 
 - task: SonarCloudAnalyze@1
 
