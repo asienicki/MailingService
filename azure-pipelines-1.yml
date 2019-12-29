@@ -31,8 +31,6 @@ steps:
      **\$(BuildConfiguration)\*UnitTests.dll
      !**\*Microsoft.VisualStudio.TestPlatform*
      !**\obj\**
-    vstestLocationMethod: 'location'
-    vstestLocation: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\TestPlatform\'
     codeCoverageEnabled: True
     otherConsoleOptions: '/platform:x64 /Framework:.NETCoreApp,Version=v3.1 /logger:console;verbosity="normal" '
     platform: '$(buildPlatform)'
