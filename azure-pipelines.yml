@@ -11,8 +11,14 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  buildId: "1$(Build.BuildId)"
 
 steps:
+
+# Print buildId
+- script: |
+    echo "BuildId = $(buildId)"
+    
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
   inputs:
