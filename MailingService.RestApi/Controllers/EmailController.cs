@@ -35,8 +35,8 @@ namespace MailingService.RestApi.Controllers
 
             var emailMessage = await clientAssembly.PrepareEmailMessage(base64Json);
 
-            //TODO: HangFire
-            //_emailService.Send(emailMessage);
+            _emailService.Send(emailMessage);
+
             return Ok(emailMessage.Content);
         }
     }

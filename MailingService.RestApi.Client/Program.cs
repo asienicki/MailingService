@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Flurl;
@@ -12,9 +11,11 @@ using MailingService.ExternalLib;
 
 namespace MailingService.RestApi.Client
 {
-    class Program
+    static class Program
     {
-        static async Task Main(string[] args)
+        static string emailServiceUrl = "https://localhost:44382";
+
+        static async Task Main()
         {
             var sampleModel = new CustomViewModel
             {
@@ -28,10 +29,9 @@ namespace MailingService.RestApi.Client
             var res = output.ToString()
                 .Base64Encode();
 
-            FlurlConfiguration.ConfigureDomainForDefaultCredentials("https://localhost:44382");
-
-
-            var response = await "https://localhost:44382"
+            FlurlConfiguration.ConfigureDomainForDefaultCredentials(emailServiceUrl);
+            
+            var response = await emailServiceUrl
                .AppendPathSegment("email")
                .SetQueryParams(new
                {
@@ -39,6 +39,8 @@ namespace MailingService.RestApi.Client
                    base64Json = res
                })
                .GetAsync();
+
+            Console.WriteLine(await response.Content.ReadAsStringAsync());
         }
     }
 
