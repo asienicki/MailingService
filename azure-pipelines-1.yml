@@ -11,7 +11,7 @@ steps:
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'test'
-    organization: 'softwarehero2'
+    organization: 'softwarehero'
     scannerMode: 'MSBuild'
     projectKey: 'SHMS'
     projectName: 'Mailing Service'
