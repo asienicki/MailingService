@@ -1,0 +1,35 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  buildId: "1$(Build.BuildId)"
+
+steps:
+
+# Print buildId
+- script: |
+    echo "BuildId = $(buildId)"
+    
+- task: UseDotNet@2
+  displayName: 'Install .NET Core SDK'
+  inputs:
+    version: 3.1.100
+    performMultiLevelLookup: true
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+
+# Install SonarScanner
+- script: |
+    dotnet tool install --global dotnet-sonarscanner
+# Begin SonarScanner 
+- script: |
+    %USERPROFILE%\.dotnet\tools\dotnet-sonarscanner begin /k:"SHMS" /d:sonar.organization="softwarehero" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="$(SONAR_TOKEN)" /v:"$(buildId)" /d:sonar.cs.opencover.reportsPaths="**\coverage.opencover.xml"
