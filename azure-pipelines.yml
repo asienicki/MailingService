@@ -24,3 +24,6 @@ steps:
 # Install SonarScanner
 - script: |
     dotnet tool install --global dotnet-sonarscanner
+# Begin SonarScanner 
+- script: |
+    %USERPROFILE%\.dotnet\tools\dotnet-sonarscanner begin
