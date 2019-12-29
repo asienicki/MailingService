@@ -11,10 +11,10 @@ steps:
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'test'
-    organization: 'softwarehero'
+    organization: 'softwarehero2'
     scannerMode: 'MSBuild'
-    projectKey: 'SHMS'
-    projectName: 'MailingService'
+    projectKey: 'SHMS2'
+    projectName: 'Mailing Service'
     
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
