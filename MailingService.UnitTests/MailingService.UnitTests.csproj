@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MailingService.ClientExpectations\MailingService.ClientExpectations.csproj" />
+    <ProjectReference Include="..\MailingService.ExternalLib\MailingService.ExternalLib.csproj" />
   </ItemGroup>
 
 </Project>

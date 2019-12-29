@@ -1,6 +1,6 @@
-﻿
-namespace MailingService.RestApi
+﻿namespace MailingService.RestApi
 {
+    using Domains.Impl;
     using System.Composition.Hosting;
     using System.IO;
     using System.Reflection;
@@ -8,19 +8,21 @@ namespace MailingService.RestApi
 
     public class MefHelper : IMefHelper
     {
+        private readonly IMefConfiguration _mefConfiguration;
+
+        public MefHelper(IMefConfiguration mefConfiguration)
+        {
+            _mefConfiguration = mefConfiguration;
+        }
+
         public IEmailMessageBuilder GetEmailMessageBuilderByName(string assemblyName)
         {
-            var executableLocation = Assembly.GetEntryAssembly()?.Location;
-
-            //Note: Directory path for plugins should be in configuration
-            var path = Path.Combine(Path.GetDirectoryName(executableLocation), "Plugins", "netcoreapp3.1", assemblyName);
-
-            if (!File.Exists(path))
+            if (!File.Exists(_mefConfiguration.Path))
             {
-                throw new FileNotFoundException(path);
+                throw new FileNotFoundException(_mefConfiguration.Path);
             }
 
-            var assembly = Assembly.Load(path);
+            var assembly = Assembly.Load(_mefConfiguration.Path);
 
             var configuration = new ContainerConfiguration()
                 .WithAssembly(assembly);

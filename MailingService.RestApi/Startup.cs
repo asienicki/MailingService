@@ -24,6 +24,9 @@ namespace MailingService.RestApi
             services.AddSingleton<IEmailConfiguration>(Configuration.GetSection("EmailConfiguration")
                 .Get<EmailConfiguration>());
 
+            services.AddSingleton<IMefConfiguration>(Configuration.GetSection("MefConfiguration")
+                .Get<MefConfiguration>());
+
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IMefHelper, MefHelper>();
 
