@@ -24,13 +24,18 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
+
 - task: VSTest@2
   inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
-      **\*Test*.dll
+      **\*UnitTests.dll
       !**\*TestAdapter.dll
       !**\obj\**
+    codeCoverageEnabled: true
+    otherConsoleOptions: '/framework:".NETCoreApp,Version=3.1"'
     searchFolder: '$(System.DefaultWorkingDirectory)'
 
 - task: SonarCloudAnalyze@1
