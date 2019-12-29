@@ -13,7 +13,7 @@ steps:
     SonarCloud: 'test'
     organization: 'softwarehero2'
     scannerMode: 'MSBuild'
-    projectKey: 'SHMS2'
+    projectKey: 'MailingService'
     projectName: 'Mailing Service'
     
 - task: UseDotNet@2
