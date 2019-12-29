@@ -31,12 +31,9 @@ steps:
       **\*Test*.dll
       !**\*TestAdapter.dll
       !**\obj\**
+    codeCoverageEnabled: true
+    otherConsoleOptions: '/framework:".NETCoreApp,Version=3.1"'
     searchFolder: '$(System.DefaultWorkingDirectory)'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'VSTest'
-    testResultsFiles: '**/TEST-*.xml'
 
 - task: SonarCloudAnalyze@1
 
