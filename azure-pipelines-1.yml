@@ -31,7 +31,7 @@ steps:
     configuration: '$(buildConfiguration)'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
-      **\*Test*.dll
+      **\*UnitTests.dll
       !**\*TestAdapter.dll
       !**\obj\**
     codeCoverageEnabled: true
