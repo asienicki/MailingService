@@ -1,4 +1,4 @@
-﻿namespace MailingService.Domains.Impl
+﻿namespace MailingService.Domains
 {
     public interface IMefConfiguration
     {

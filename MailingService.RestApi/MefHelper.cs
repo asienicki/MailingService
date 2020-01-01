@@ -1,11 +1,13 @@
 ﻿namespace MailingService.RestApi
 {
-    using Domains.Impl;
     using System.Composition.Hosting;
     using System.IO;
     using System.Reflection;
     using ClientExpectations;
+    using System.Diagnostics.CodeAnalysis;
+    using Domains;
 
+    [ExcludeFromCodeCoverage]
     public class MefHelper : IMefHelper
     {
         private readonly IMefConfiguration _mefConfiguration;

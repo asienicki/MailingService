@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace MailingService.RestApi
 {
+    using Domains.Models;
     using Domains;
     using Domains.Impl;
     using Microsoft.AspNetCore.Builder;
@@ -8,6 +11,7 @@ namespace MailingService.RestApi
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -21,7 +25,7 @@ namespace MailingService.RestApi
         {
             services.AddControllers();
 
-            services.AddSingleton<IEmailConfiguration>(Configuration.GetSection("EmailConfiguration")
+            services.AddSingleton(Configuration.GetSection("EmailConfiguration")
                 .Get<EmailConfiguration>());
 
             services.AddSingleton<IMefConfiguration>(Configuration.GetSection("MefConfiguration")

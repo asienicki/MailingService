@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using MailingService.ClientExpectations;
+using MailingService.Domains.Models;
 using MailKit.Net.Smtp;
 using MimeKit;
 using MimeKit.Text;
@@ -8,9 +9,9 @@ namespace MailingService.Domains.Impl
 {
     public class EmailService : IEmailService
     {
-        private readonly IEmailConfiguration _emailConfiguration;
+        private readonly EmailConfiguration _emailConfiguration;
 
-        public EmailService(IEmailConfiguration emailConfiguration)
+        public EmailService(EmailConfiguration emailConfiguration)
         {
             _emailConfiguration = emailConfiguration;
         }

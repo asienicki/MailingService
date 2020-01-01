@@ -1,6 +1,6 @@
-﻿namespace MailingService.Domains.Impl
+﻿namespace MailingService.Domains.Models
 {
-    public class EmailConfiguration : IEmailConfiguration
+    public class EmailConfiguration
     {
         public string SmtpServer { get; set; }
 
