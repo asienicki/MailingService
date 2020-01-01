@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.ExternalLib"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.RestApi.Client", "MailingService.RestApi.Client\MailingService.RestApi.Client.csproj", "{A0C1E811-5745-4EF5-93D8-56040153D57C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailingService.UnitTests", "MailingService.UnitTests\MailingService.UnitTests.csproj", "{E16BEE0B-3998-4E83-B610-7C269BFE895F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingService.UnitTests", "MailingService.UnitTests\MailingService.UnitTests.csproj", "{E16BEE0B-3998-4E83-B610-7C269BFE895F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E2D7D0B9-8EF5-48A6-B7DC-3EF1381B9142}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E36248E-D566-4F40-A6CC-9F4122C38254} = {E2D7D0B9-8EF5-48A6-B7DC-3EF1381B9142}
+		{A0C1E811-5745-4EF5-93D8-56040153D57C} = {E2D7D0B9-8EF5-48A6-B7DC-3EF1381B9142}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA18D028-1BD2-4FCA-BAC6-71267578ABAC}

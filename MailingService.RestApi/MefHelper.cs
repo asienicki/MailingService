@@ -5,12 +5,15 @@
     using System.IO;
     using System.Reflection;
     using ClientExpectations;
+    using System.Diagnostics.CodeAnalysis;
+    using Domains;
 
+    [ExcludeFromCodeCoverage]
     public class MefHelper : IMefHelper
     {
-        private readonly IMefConfiguration _mefConfiguration;
+        private readonly MefConfiguration _mefConfiguration;
 
-        public MefHelper(IMefConfiguration mefConfiguration)
+        public MefHelper(MefConfiguration mefConfiguration)
         {
             _mefConfiguration = mefConfiguration;
         }
