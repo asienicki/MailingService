@@ -37,34 +37,52 @@ namespace MailingService.UnitTests
         [TestMethod]
         public async Task SerializeToJsonStringTest()
         {
+<<<<<<< HEAD
             //Arrange
+=======
+>>>>>>> master
             var sampleModel = new CustomViewModel
             {
                 Description = "Fake description."
             };
 
+<<<<<<< HEAD
             var expected = "{\"Description\":\"Fake description.\"}";
 
             //Act
             var jsonString = await sampleModel.SerializeToJsonString();
 
             //Assert
+=======
+            var jsonString = await sampleModel.SerializeToJsonString();
+
+            var expected = "{\"Description\":\"Fake description.\"}";
+
+>>>>>>> master
             jsonString.Should().Be(expected);
         }
 
         [TestMethod]
         public async Task SerializeAndEncodeTest()
         {
+<<<<<<< HEAD
             //Arrange
+=======
+>>>>>>> master
             var sampleModel = new CustomViewModel
             {
                 Description = "Fake description."
             };
 
+<<<<<<< HEAD
             //Act
             var base64String = await sampleModel.SerializeAndEncode();
 
             //Assert
+=======
+            var base64String = await sampleModel.SerializeAndEncode();
+
+>>>>>>> master
             base64String.Should().Be("eyJEZXNjcmlwdGlvbiI6IkZha2UgZGVzY3JpcHRpb24uIn0=");
         }
     }
