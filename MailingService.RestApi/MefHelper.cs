@@ -11,9 +11,9 @@
     [ExcludeFromCodeCoverage]
     public class MefHelper : IMefHelper
     {
-        private readonly IMefConfiguration _mefConfiguration;
+        private readonly MefConfiguration _mefConfiguration;
 
-        public MefHelper(IMefConfiguration mefConfiguration)
+        public MefHelper(MefConfiguration mefConfiguration)
         {
             _mefConfiguration = mefConfiguration;
         }
