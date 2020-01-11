@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Flurl" Version="2.8.2" />
     <PackageReference Include="Flurl.Http" Version="2.4.2" />
+    <PackageReference Include="Flurl.Http.WindowsAuthentication" Version="1.0.0" />
     <PackageReference Include="Jil" Version="3.0.0-alpha2" />
   </ItemGroup>
 
