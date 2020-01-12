@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
+using Flurl.Http.WindowsAuthentication;
 using MailingService.ClientExpectations;
 using MailingService.ExternalLib;
 
@@ -20,10 +21,11 @@ namespace MailingService.RestApi.Client
 
             var res = sampleModel.SerializeAndEncode();
 
-            FlurlConfiguration.ConfigureDomainForDefaultCredentials(emailServiceUrl);
+            //FlurlConfiguration.ConfigureDomainWithWindowsAuthentication(emailServiceUrl);
             
             var response = await emailServiceUrl
                .AppendPathSegment("email")
+               .WithWindowsAuth()
                .SetQueryParams(new
                {
                    templateName  = "MailingService.ExternalLib.dll",
